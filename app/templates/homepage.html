@@ -1,0 +1,14 @@
+{% extends "layout/main.html" %}
+
+{% block body %}
+<ul class="post-list flex-column">
+    {% for post in posts %}
+    <li class="post-list-item">
+        {% include "partials/post-info.html" %}
+    </li>
+    {% endfor %}
+</ul>
+
+<!-- <h2>There are no posts yet! Why don't you <a href="/dashboard" class="no-posts">write one</a>?</h2> -->
+
+{% endblock %}
