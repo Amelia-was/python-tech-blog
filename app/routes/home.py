@@ -34,8 +34,9 @@ def single(id):
 def single_user(id):
     # get single user by id
     db = get_db()
-    post = db.query(User).filter(Post.id == id).one()
+    user = db.query(User).filter(User.id == id).one()
 
     return render_template(
-        'single-user.html'
+        'single-user.html',
+        user=user
     )

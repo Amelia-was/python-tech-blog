@@ -1,0 +1,27 @@
+{% extends "layout/main.html" %}
+
+{% block body %}
+{% include "partials/post-info.html" %}
+
+{% if loggedIn == True %}
+<form class="comment-form p-1">
+    <div>
+        <label for="comment-body" class="d-none">Add comment:</label>
+        <textarea name="comment-body" id="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit" class="btn">add comment</button>
+    </div>
+</form>
+{% endif %}
+
+{% with comments=post.comments %}
+{% include "partials/comments.html" %}
+{% endwith %}
+
+{% if loggedIn == True %}
+<script src="/javascript/add-comment.js"></script>
+{% endif %}
+
+{% endblock %}
