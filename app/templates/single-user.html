@@ -1,8 +1,18 @@
 {% extends "layout/main.html" %}
 
 {% block body %}
-<article class="post p-1">
-    <h1>User: {{user.username}}</h1>
-
-</article>
+    {% if posts|length > 0 %}
+    <h3>{{user.username}}'s Posts</h3>
+    <section>
+        <ol class="flex-row dashboard-posts">
+            {% for post in posts %}
+            <li class="dashboard-post mb-1 mr-1">
+                {% include "partials/post-info.html" %}
+            </li>
+            {% endfor %}
+        </ol>
+    </section>
+    {% else %}
+    <h3>{{user.username}} hasn't made any posts yet!</h3>
+    {% endif %}
 {% endblock %}

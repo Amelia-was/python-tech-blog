@@ -1,6 +1,7 @@
 {% extends "layout/main.html" %}
 
 {% block body %}
+{% if posts|length > 0 %}
 <ul class="post-list flex-column">
     {% for post in posts %}
     <li class="post-list-item">
@@ -8,7 +9,10 @@
     </li>
     {% endfor %}
 </ul>
+{% else %}
 
-<!-- <h2>There are no posts yet! Why don't you <a href="/dashboard" class="no-posts">write one</a>?</h2> -->
+<h2>There are no posts yet! Why don't you <a href="/dashboard" class="no-posts">write one</a>?</h2>
+
+{% endif %}
 
 {% endblock %}

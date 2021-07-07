@@ -35,8 +35,10 @@ def single_user(id):
     # get single user by id
     db = get_db()
     user = db.query(User).filter(User.id == id).one()
+    posts = db.query(Post).filter(Post.user_id == id).order_by(Post.created_at.desc()).all()
 
     return render_template(
         'single-user.html',
-        user=user
+        user=user,
+        posts=posts
     )
