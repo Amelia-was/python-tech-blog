@@ -1,6 +1,6 @@
 from datetime import datetime
 from app.db import Base
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, select, func, pickleType
+from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, select, func, PickleType
 from sqlalchemy.orm import relationship, column_property
 from sqlalchemy.ext.mutable import MutableList
 

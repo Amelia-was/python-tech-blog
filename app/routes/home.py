@@ -21,3 +21,11 @@ def single(id):
     return render_template(
         'single-post.html'
     )
+
+@bp.route('/user/<id>')
+def single_user(id):
+    # get single user by id
+    #
+    return render_template(
+        'single-user.html'
+    )
