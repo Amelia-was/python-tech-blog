@@ -3,7 +3,7 @@
         <a href="/post/{{post.id}}" target="_blank" class="title-link">{{post.title}}</a>
     </div>
     <div class="post-body">
-        <p class="post-text mb-1">{{post.text}}</p>
+        <p class="post-text mb-1">{{post.body}}</p>
         <div class="meta">
             By {{post.user.username}} {{#if post.byUser}} (You!) {{/if}}▪ {{post.created_at|format_date}} ▪
             <a href="/post/{{id}}" class="comment-link">{{comments.length}}
