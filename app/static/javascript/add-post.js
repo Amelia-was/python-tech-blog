@@ -2,13 +2,15 @@ async function addPost (event) {
     event.preventDefault();
 
     const title = document.querySelector('#post-title').value;
-    const text = document.querySelector('#post-text').value;
+    const body = document.querySelector('#post-body').value;
+    const tags = [];
     
     const response = await fetch ('/api/posts', {
         method: 'POST',
         body: JSON.stringify({
             title,
-            text
+            body,
+            tags
         }),
         headers: {
             'Content-type': 'application/json'

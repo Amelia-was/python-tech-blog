@@ -25,22 +25,22 @@
             <h4>Tech minds think alike.</h4>
         </div>
         <nav class="flex-col-xs">
-            <!-- {% if loggedIn %} -->
+            {% if loggedIn %}
             <a href="/dashboard" class="nav-link">dashboard</a>
             <button id="logout" class="nav-link nav-button">logout</button>
-            <!-- {% else %} -->
+            {% else %}
             <a href="/login" class="nav-link nav-button">login</a>
             <a href="login" class="btn">Sign up</a>
-            <!-- {% endif %} -->
+            {% endif %}
         </nav>
     </header>
     <main>
         {% block body %}{% endblock %}
     </main>
 
-    <!-- {% if loggedIn %} -->
+    {% if loggedIn %}
     <script src='/javascript/logout.js'></script>
-    <!-- {% endif %} -->
+    {% endif %}
 
 </body>
 
