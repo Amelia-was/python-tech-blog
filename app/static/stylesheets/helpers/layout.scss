@@ -1,0 +1,28 @@
+@import 'base';
+
+main {
+    background: $white;
+    max-width: 1024px;
+    margin: 0 auto;
+    box-shadow: $box-shadow;
+}
+
+header {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 375px) {
+    h1 {
+        font-size: 36px;
+    }
+    .nav-link {
+        margin-bottom: $smallSpacer;
+    }
+    .flex-col-xs {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+};

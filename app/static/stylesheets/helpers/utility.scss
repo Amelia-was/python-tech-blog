@@ -1,0 +1,63 @@
+@import 'base';
+
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.flex-column {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.d-none {
+    display: none;
+}
+
+.mt-1 {
+    margin-top: $smallSpacer;
+}
+
+.mb-1 {
+    margin-bottom: $smallSpacer;
+}
+
+.mr-1 {
+    margin-right: $smallSpacer;
+}
+
+.mb-2 {
+    margin-bottom: $bigSpacer;
+}
+
+.mr-2 {
+    margin-right: $bigSpacer;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.p-1 {
+    padding: $smallSpacer;
+}
+
+.p-2 {
+    padding: $bigSpacer;
+}
+
+.pb-2 {
+    padding-bottom: $bigSpacer;
+}

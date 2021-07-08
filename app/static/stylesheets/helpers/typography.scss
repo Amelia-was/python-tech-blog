@@ -1,0 +1,28 @@
+@import 'base';
+
+h1, h2, h3, h4 {
+    font-family: $font-heading;
+    color: $white;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-style: italic;
+}
+
+h2, h3 {
+    padding: $bigSpacer;
+    color: $purple;
+}

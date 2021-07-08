@@ -1,0 +1,174 @@
+@import 'base';
+
+li {
+    list-style-type: none;
+}
+
+hr {
+    width: 75%;
+    margin: 0 auto;
+}
+
+/* links and buttons */
+
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+.title-link, .title-link:visited, .comment-link, .comment-link:visited {
+    color: #000;
+}
+
+.title-link:hover, .comment-link:hover {
+    color: $purple;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: $purple;
+}
+
+a, button {
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    font-size: inherit;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.btn {
+    background: $purple;
+    padding: $smallSpacer;
+    border-radius: $smallSpacer;
+    border: none;
+    color: #FFF;
+    text-transform: uppercase;
+    box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.1);
+    font-size: smaller;
+}
+
+.btn:hover {
+    background: $lightPurple;
+}
+
+.edit-link, .edit-link:visited {
+    color: #FFF;
+}
+                        
+.back-link {
+    color: $purple;
+}
+
+.back-link:hover {
+    color: $lightPurple;
+}
+
+.edit-link {
+    display: block;
+    background: $purple;
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    text-align: center;
+}
+
+.no-posts {
+    color: $yellow;
+}
+
+.no-posts:hover {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+/* posts */
+.post {
+    background: $white;
+}
+
+.post-title {
+    font-family: 'Averia Serif Libre', cursive;
+    color: $purple;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.post-list-item {
+    width: 100%;
+    border-bottom: 1px solid $purple;
+}
+
+.post-list-item:last-child {
+    border: none;
+}
+
+#post-body {
+    height: 150px;
+    width: 300px;
+}
+
+.meta {
+    font-size: 12px;
+    color: #828282;
+}
+
+.dashboard-post {
+    border: 1px solid $purple;
+    width: 200px;
+    height: max-content;
+    display: inline-block;
+}
+
+.dashboard-posts {
+    padding-left: $bigSpacer;
+}
+
+/* comments */
+
+.comment:nth-child(2n) {
+    background: #e3e3e3;
+}
+
+.comment .meta {
+    color: #000;
+}
+
+#comment-body {
+    height: 100px;
+    width: 300px;
+}
+
+/* forms */
+
+.form-container {
+    margin: $bigSpacer auto;
+    max-width: 475px;
+}
+
+.form-input {
+    margin-bottom: $smallSpacer;
+    max-width: 45%;
+}
+
+label {
+    font-size: 12px;
+    font-style: italic;
+    color: $purple;
+}
+
+.new-post-form {
+    background: $yellow;
+    margin: 0 auto;
+    max-width: 575px;
+    box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.1);
+}
