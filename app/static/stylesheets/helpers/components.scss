@@ -6,7 +6,6 @@ li {
 
 hr {
     width: 75%;
-    margin: 0 auto;
 }
 
 /* links and buttons */
@@ -16,7 +15,7 @@ a, a:visited, a:hover {
 }
 
 .title-link, .title-link:visited, .comment-link, .comment-link:visited {
-    color: #000;
+    color: $black;
 }
 
 .title-link:hover, .comment-link:hover {
@@ -24,7 +23,7 @@ a, a:visited, a:hover {
 }
 
 .nav-link {
-    color: #fff;
+    color: $white;
 }
 
 .nav-link:hover {
@@ -50,9 +49,9 @@ button:hover {
     padding: $smallSpacer;
     border-radius: $smallSpacer;
     border: none;
-    color: #FFF;
+    color: $white;
     text-transform: uppercase;
-    box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: $box-shadow;
     font-size: smaller;
 }
 
@@ -61,7 +60,7 @@ button:hover {
 }
 
 .edit-link, .edit-link:visited {
-    color: #FFF;
+    color: $white;
 }
                         
 .back-link {
@@ -140,7 +139,7 @@ button:hover {
 }
 
 .comment .meta {
-    color: #000;
+    color: $black;
 }
 
 #comment-body {
@@ -168,7 +167,6 @@ label {
 
 .new-post-form {
     background: $yellow;
-    margin: 0 auto;
     max-width: 575px;
-    box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: $box-shadow;
 }

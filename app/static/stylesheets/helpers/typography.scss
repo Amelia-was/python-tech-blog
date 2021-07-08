@@ -2,7 +2,15 @@
 
 h1, h2, h3, h4 {
     font-family: $font-heading;
+}
+
+h1, h4 {
     color: $white;
+}
+
+h2, h3 {
+    padding: $bigSpacer;
+    color: $purple;
 }
 
 h1 {
@@ -20,9 +28,4 @@ h3 {
 
 h4 {
     font-style: italic;
-}
-
-h2, h3 {
-    padding: $bigSpacer;
-    color: $purple;
 }

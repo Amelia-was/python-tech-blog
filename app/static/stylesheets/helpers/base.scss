@@ -2,10 +2,17 @@
 
 $yellow: #e09f3e;
 $white: #f2f2f2;
+$black: #000;
 $purple: #694a68;
 $lightPurple: #80597e;
+
+$zero: 0;
 $smallSpacer: 10px;
 $bigSpacer: 20px;
+
+$margin-padding: ('margin': 'm', 'padding': 'p');
+$spacers: ($zero: $zero, $smallSpacer: '1', $bigSpacer: '2');
+$sides: ('': '', '-top': 't', '-bottom': 'b', '-right': 'r', '-left': 'l');
 
 $font-body: Helvetica, Arial, sans-serif;
 $font-heading: 'Averia Serif Libre', cursive;
