@@ -5,6 +5,11 @@
     flex-flow: row wrap;
 }
 
+.flex-row-reverse {
+    display: flex;
+    flex-flow: row wrap-reverse;
+}
+
 .flex-column {
     display: flex;
     flex-flow: column wrap;
@@ -39,4 +44,8 @@
             }
         }
     }
+}
+
+.box-shadow {
+    box-shadow: $box-shadow;
 }

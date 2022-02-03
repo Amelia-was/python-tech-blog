@@ -1,26 +1,25 @@
 @import 'base';
 
 main {
-    background: $white;
-    max-width: 1024px;
-    box-shadow: $box-shadow;
+    background: $bg;
 }
 
-header {
+.hero {
+    background: $brand;
+    height: 300px;
+}
+
+.posts {
     max-width: 1024px;
 }
 
-/* Media Queries */
-@media only screen and (max-width: 375px) {
-    h1 {
-        font-size: 36px;
-    }
-    .nav-link {
-        margin-bottom: $smallSpacer;
-    }
-    .flex-col-xs {
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-    }
-};
+.sidebar {
+    min-width: 375px;
+    // position: fixed;
+    // right: 0;
+    // top: 100px;
+}
+
+.container {
+    padding: $bigSpacer;
+}

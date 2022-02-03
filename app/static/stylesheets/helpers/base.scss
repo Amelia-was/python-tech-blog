@@ -6,6 +6,12 @@ $black: #000;
 $purple: #694a68;
 $lightPurple: #80597e;
 
+$brand: $yellow;
+$bg: $white;
+$text: $black;
+$accent: $purple;
+$lightAccent: $lightPurple;
+
 $zero: 0;
 $smallSpacer: 10px;
 $bigSpacer: 20px;
@@ -16,12 +22,13 @@ $sides: ('': '', '-top': 't', '-bottom': 'b', '-right': 'r', '-left': 'l');
 
 $font-body: Helvetica, Arial, sans-serif;
 $font-heading: 'Averia Serif Libre', cursive;
+$font-sizes: (48, 36, 24, 12);
 
 $box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.1);
 
 body {
-    background: $yellow;
-    font-family: $font-body
+    background: $brand;
+    font-family: $font-body;
 }
 
 // reset

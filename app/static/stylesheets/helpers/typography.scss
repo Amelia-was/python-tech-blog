@@ -1,29 +1,20 @@
+@use 'sass:list';
 @import 'base';
 
-h1, h2, h3, h4 {
-    font-family: $font-heading;
+@for $i from 1 through 4 {
+    h#{$i} {
+        font-family: $font-heading;
+        font-size: list.nth($font-sizes, $i);
+    }
 }
 
 h1, h4 {
-    color: $white;
+    color: $bg;
 }
 
 h2, h3 {
     padding: $bigSpacer;
-    color: $purple;
-}
-
-h1 {
-    font-weight: 700;
-    font-size: 48px;
-}
-
-h2 {
-    font-size: 36px;
-}
-
-h3 {
-    font-size: 24px;
+    color: $accent;
 }
 
 h4 {

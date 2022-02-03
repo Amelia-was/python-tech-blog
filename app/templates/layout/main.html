@@ -11,7 +11,7 @@
 
 <body>
 
-    <header class="flex-row align-center justify-between p-2 centered">
+    <header class="flex-row align-center justify-between p-2">
         <div class="heading-wrapper">
             <a href="/">
                 <h1 class="">
@@ -20,20 +20,21 @@
             </a>
             <h4>Tech minds think alike.</h4>
         </div>
-        <nav class="flex-col-xs">
+        <nav>
             {% if loggedIn %}
-            <a href="/dashboard" class="nav-link">dashboard</a>
+            <a href="/dashboard" class="nav-link pr-1">dashboard</a>
             <button id="logout" class="nav-link nav-button">logout</button>
             {% else %}
-            <a href="/login" class="nav-link nav-button">login</a>
+            <a href="/login" class="nav-link nav-button pr-1">login</a>
             <a href="login" class="btn">Sign up</a>
             {% endif %}
         </nav>
     </header>
-    <main class="centered">
+    <main>
         {% block body %}{% endblock %}
     </main>
 
+    <script src='/javascript/home.js'></script>
     {% if loggedIn %}
     <script src='/javascript/logout.js'></script>
     {% endif %}
