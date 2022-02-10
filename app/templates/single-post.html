@@ -3,6 +3,12 @@
 {% block body %}
 {% include "partials/post-info.html" %}
 
+<div class="btn-list">
+{% for tag in post.tags %}
+    <button class="btn btn-line">{{tag}}</button>
+{% endfor %}
+</div>
+
 {% if loggedIn == True %}
 <form class="comment-form p-1">
     <div>

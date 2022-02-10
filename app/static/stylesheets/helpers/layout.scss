@@ -10,15 +10,19 @@ main {
 }
 
 .posts {
-    max-width: 1024px;
+    // max-width: 1024px;
+    max-width: 70%;
 }
 
 .sidebar {
-    min-width: 375px;
+    min-width: 200px;
     // position: fixed;
     // right: 0;
     // top: 100px;
 }
+// add media query for large screens
+//sidebar align or justify: center;
+//posts width: 100%
 
 .container {
     padding: $bigSpacer;

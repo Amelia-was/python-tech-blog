@@ -4,7 +4,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,400;0,700;1,400;1,700&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,400;0,700;1,400;1,700&display=swap);
 body {
-  background: #e09f3e;
+  background: #f2f2f2;
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -15,7 +15,7 @@ body {
 }
 
 body {
-  background: #e09f3e;
+  background: #f2f2f2;
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -83,6 +83,7 @@ button:hover {
 .btn {
   background: #694a68;
   padding: 10px;
+  margin: 10px;
   border-radius: 10px;
   border: none;
   color: #f2f2f2;
@@ -91,8 +92,29 @@ button:hover {
   font-size: smaller;
 }
 
-.btn:hover {
+.btn-solid {
+  background: #694a68;
+  color: #f2f2f2;
+}
+
+.btn-solid:hover {
   background: #80597e;
+}
+
+.btn-line {
+  background: #f2f2f2;
+  color: #694a68;
+  border: 1px solid #694a68;
+}
+
+.btn-line:hover {
+  background: #694a68;
+  color: #f2f2f2;
+}
+
+.btn-list {
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .edit-link, .edit-link:visited {
@@ -206,7 +228,7 @@ label {
 }
 
 body {
-  background: #e09f3e;
+  background: #f2f2f2;
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -226,11 +248,11 @@ main {
 }
 
 .posts {
-  max-width: 1024px;
+  max-width: 70%;
 }
 
 .sidebar {
-  min-width: 375px;
+  min-width: 200px;
 }
 
 .container {
@@ -238,7 +260,7 @@ main {
 }
 
 body {
-  background: #e09f3e;
+  background: #f2f2f2;
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -282,7 +304,7 @@ h4 {
 }
 
 body {
-  background: #e09f3e;
+  background: #f2f2f2;
   font-family: Helvetica, Arial, sans-serif;
 }
 

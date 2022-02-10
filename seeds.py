@@ -1,4 +1,4 @@
-from app.models import User, Post, Comment
+from app.models import User, Post, Comment, Tag, PostTag
 from app.db import Session, Base, engine
 
 # drop and rebuild tables
@@ -19,13 +19,64 @@ db.add_all([
 
 db.commit()
 
+# create Tags
+# html = Tag(name='html'),
+# css = Tag(name='css'),
+# react = Tag(name='react'),
+# oop = Tag(name='oop'),
+# javascript = Tag(name='javascript'),
+# python = Tag(name='python'),
+# productivity = Tag(name='productivity')
+
+# insert tags
+# db.add_all([html, css, react, oop, javascript, python, productivity])
+
+# insert tags
+db.add_all([
+    Tag(name='html'),
+    Tag(name='css'),
+    Tag(name='react'),
+    Tag(name='oop'),
+    Tag(name='javascript'),
+    Tag(name='python'),
+    Tag(name='productivity')
+])
+
+db.commit()
+
+# insert posts
+# db.add_all([
+#     Post(title='Donec posuere metus vitae ipsum', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', post_tags=[css, javascript], user_id=1),
+#     Post(title='Morbi non quam nec dui luctus rutrum', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', post_tags=[javascript, python, oop], user_id=1),
+#     Post(title='Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', post_tags=[productivity], user_id=2),
+#     Post(title='Nunc purus', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', post_tags=[css, html], user_id=3),
+#     Post(title='Pellentesque eget nunc', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', post_tags=[react, css], user_id=4)
+# ])
+
+
 # insert posts
 db.add_all([
-    Post(title='Donec posuere metus vitae ipsum', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', tags=['python', 'OOP', 'back end'], user_id=1),
-    Post(title='Morbi non quam nec dui luctus rutrum', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', tags=['css', 'sass', 'front end'], user_id=1),
-    Post(title='Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', tags=['productivity'], user_id=2),
-    Post(title='Nunc purus', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', tags=['react', 'design', 'front end'], user_id=3),
-    Post(title='Pellentesque eget nunc', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', tags=['api', 'back end'], user_id=4)
+    Post(title='Donec posuere metus vitae ipsum', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', user_id=1),
+    Post(title='Morbi non quam nec dui luctus rutrum', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', user_id=1),
+    Post(title='Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', user_id=2),
+    Post(title='Nunc purus', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', user_id=3),
+    Post(title='Pellentesque eget nunc', body='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra vitae massa sed tincidunt. Donec facilisis consectetur dolor. Suspendisse fringilla mauris quam, a bibendum arcu venenatis id. Vestibulum ornare orci felis, nec porttitor ante condimentum accumsan. Aliquam non dictum erat, in mattis orci. Aliquam ornare semper ipsum, eu ornare ligula ullamcorper ut.', user_id=4)
+])
+
+db.commit()
+
+# insert post_tags
+db.add_all([
+    PostTag(post_id='1', tag_name='css'),
+    PostTag(post_id='1', tag_name='javascript'),
+    PostTag(post_id='2', tag_name='javascript'),
+    PostTag(post_id='2', tag_name='python'),
+    PostTag(post_id='2', tag_name='oop'),
+    PostTag(post_id='3', tag_name='productivity'),
+    PostTag(post_id='4', tag_name='css'),
+    PostTag(post_id='4', tag_name='html'),
+    PostTag(post_id='5', tag_name='css'),
+    PostTag(post_id='1', tag_name='react'),
 ])
 
 db.commit()
@@ -42,3 +93,15 @@ db.add_all([
 db.commit()
 
 db.close()
+
+# insert tags
+# db.add_all([
+#     Tag(tag_name='html', posts=[4]),
+#     Tag(tag_name='css', posts=[1, 4, 5]),
+#     Tag(tag_name='react', posts=[5]),
+#     Tag(tag_name='oop', posts=[2]),
+#     Tag(tag_name='javascript', posts=[1, 2]),
+#     Tag(tag_name='python', posts=[2]),
+#     Tag(tag_name='productivity', posts=[3])
+# ])
+

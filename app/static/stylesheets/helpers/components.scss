@@ -56,9 +56,11 @@ button:hover {
     cursor: pointer;
 }
 
+
 .btn {
     background: $accent;
     padding: $smallSpacer;
+    margin: $smallSpacer;
     border-radius: $smallSpacer;
     border: none;
     color: $bg;
@@ -67,8 +69,29 @@ button:hover {
     font-size: smaller;
 }
 
-.btn:hover {
+.btn-solid {
+    background: $accent;
+    color: $bg;
+}
+
+.btn-solid:hover {
     background: $lightAccent;
+}
+
+.btn-line {
+    background: $bg;
+    color: $accent;
+    border: 1px solid $accent;
+}
+
+.btn-line:hover {
+    background: $accent;
+    color: $bg;
+}
+
+.btn-list {
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .edit-link, .edit-link:visited {

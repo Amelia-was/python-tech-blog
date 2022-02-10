@@ -1,6 +1,6 @@
 import sys
 from flask import Blueprint, request, jsonify, session
-from app.models import User, Post, Comment
+from app.models import User, Post, Comment, Tag
 from app.db import get_db
 from app.utils.auth import login_required
 
@@ -148,4 +148,26 @@ def delete(id):
         return jsonify(message='Post not found'), 404
 
     return '', 204
+
+@bp.route('/tags', methods=['POST'])
+@login_required
+def create_tag():
+    data = request.get_json()
+    db = get_db()
+
+    try:
+        # create a new post
+        newTag = Tag(
+            tag_name=data['tag_name']
+        )
+
+        db.add(newTag)
+        db.commit()
+    except:
+        print(sys.exc_info()[0])
+
+        db.rollback()
+        return jsonify(message='Tag failed'), 500
+
+    return jsonify(id=newTag.id)
     
