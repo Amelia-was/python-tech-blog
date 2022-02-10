@@ -9,10 +9,12 @@ def index():
     # get all posts
     db = get_db()
     posts = db.query(Post).order_by(Post.created_at.desc()).all()
+    tags = db.query(Tag).all()
 
     return render_template(
         'homepage.html',
         posts=posts,
+        tags=tags,
         loggedIn=session.get('loggedIn')
     )
 
@@ -21,18 +23,6 @@ def tagged(tag):
     # get all posts tagged <tag>
     db = get_db()
     posts = db.query(Tag).filter(Tag.tag_name == tag).all()
-
-    return render_template(
-        'homepage.html',
-        posts=posts,
-        loggedIn=session.get('loggedIn')
-    )
-
-@bp.route('/tags')
-def all_tags():
-    # get all posts tagged <tag>
-    db = get_db()
-    posts = db.query(Tag).all()
 
     return render_template(
         'homepage.html',

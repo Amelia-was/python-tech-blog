@@ -1,6 +1,6 @@
 import sys
 from flask import Blueprint, request, jsonify, session
-from app.models import User, Post, Comment, Tag
+from app.models import User, Post, Comment, Tag, PostTag
 from app.db import get_db
 from app.utils.auth import login_required
 
@@ -98,7 +98,6 @@ def create():
         newPost = Post(
             title=data['title'],
             body=data['body'],
-            tags=data['tags'],
             user_id=session.get('user_id')
         )
 
@@ -158,7 +157,7 @@ def create_tag():
     try:
         # create a new post
         newTag = Tag(
-            tag_name=data['tag_name']
+            name=data['tag_name']
         )
 
         db.add(newTag)
@@ -170,4 +169,27 @@ def create_tag():
         return jsonify(message='Tag failed'), 500
 
     return jsonify(id=newTag.id)
+
+@bp.route('/post-tags', methods=['POST'])
+@login_required
+def create_post_tag():
+    data = request.get_json()
+    db = get_db()
+
+    try:
+        # create a new post
+        newPostTag = PostTag(
+            post_id=data['post_id'],
+            tag_name=data['tag_name']
+        )
+
+        db.add(newPostTag)
+        db.commit()
+    except:
+        print(sys.exc_info()[0])
+
+        db.rollback()
+        return jsonify(message='Tag failed'), 500
+
+    return jsonify(id=newPostTag.id)
     
