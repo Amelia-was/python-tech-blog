@@ -37,7 +37,8 @@ async function addPost (event) {
         method: 'POST',
         body: JSON.stringify({
             title,
-            body
+            body, 
+            tagged
         }),
         headers: {
             'Content-type': 'application/json'
@@ -46,7 +47,7 @@ async function addPost (event) {
 
     if (response.ok) {
         console.log(response);
-        //document.location.replace('/dashboard');
+        document.location.replace('/dashboard');
     }
     else {
         alert(response.statusText);

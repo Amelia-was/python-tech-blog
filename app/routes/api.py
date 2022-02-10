@@ -93,6 +93,8 @@ def create():
     data = request.get_json()
     db = get_db()
 
+    print(data)
+
     try:
         # create a new post
         newPost = Post(
@@ -103,6 +105,16 @@ def create():
 
         db.add(newPost)
         db.commit()
+        
+        # if there are tags, add PostTags
+        if data['tagged']: 
+            for tag in data['tagged']:
+                newPostTag = PostTag(
+                    post_id=newPost.id,
+                    tag_name=tag
+                )
+            db.add(newPostTag)
+            db.commit()
     except:
         print(sys.exc_info()[0])
 
