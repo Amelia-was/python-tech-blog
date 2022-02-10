@@ -71,6 +71,7 @@ button:hover {
 .btn-solid {
     background: $accent;
     color: $bg;
+    border: 1px solid $accent;
 }
 
 .btn-solid:hover {
@@ -80,6 +81,12 @@ button:hover {
 .btn-line {
     background: $bg;
     color: $accent;
+    border: 1px solid $accent;
+}
+
+.btn-line:active {
+    background: $accent;
+    color: $bg;
     border: 1px solid $accent;
 }
 
@@ -190,7 +197,7 @@ button:hover {
 
 .form-input {
     margin-bottom: $smallSpacer;
-    max-width: 45%;
+    // max-width: 45%;
 }
 
 label {

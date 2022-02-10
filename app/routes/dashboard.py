@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, session
-from app.models import Post
+from app.models import Post, Tag
 from app.db import get_db
 from app.utils.auth import login_required
 
@@ -16,9 +16,12 @@ def dash():
         .order_by(Post.created_at.desc())
         .all()
     )
+    tags = db.query(Tag).all()
+
     return render_template(
         'dashboard.html',
         posts=posts,
+        tags=tags,
         loggedIn=session.get('loggedIn')
     )
 
