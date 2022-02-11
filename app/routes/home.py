@@ -44,11 +44,13 @@ def login():
 def single(id):
     # get single post by id
     db = get_db()
+    tags = db.query(PostTag).filter(PostTag.post_id == id).all()
     post = db.query(Post).filter(Post.id == id).one()
 
     return render_template(
         'single-post.html',
         post=post,
+        tags=tags,
         loggedIn=session.get('loggedIn')
     )
 
