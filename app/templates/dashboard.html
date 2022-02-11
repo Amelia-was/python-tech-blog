@@ -8,11 +8,11 @@
         <h3 class="p-0 pb-2">Create New Post</h3>
         <div class="form-input flex-column align-start">
             <label for="post-title">Title</label>
-            <input type="text" id="post-title" name="post-title" />
+            <input type="text" placeholder="Title" id="post-title" name="post-title" maxlength="100" />
         </div>
         <div class="form-input flex-column align-start">
             <label for="post-body">Post body</label>
-            <textarea id="post-body" name="post-text">Start writing...</textarea>
+            <textarea id="post-body" name="post-text" maxlength="5000" placeholder="Start writing..."></textarea>
         </div>
         <div class="form-input">
             <label for="post-tags">Tag your post</label>
@@ -22,6 +22,8 @@
                     {{tag.name}}
                 </button>
                 {% endfor %}
+                <label for="newTag" class="d-none">Add a new tag</label>
+                <input type="text" id="newTag" name="newTag" maxlength="20" class="input-btn-style" autocomplete="off" placeholder="add a new tag..." />
             </div>
         </div>
         <button type="submit" class="btn">Post</button>

@@ -169,7 +169,7 @@ def create_tag():
     try:
         # create a new post
         newTag = Tag(
-            name=data['tag_name']
+            name=data['tagName']
         )
 
         db.add(newTag)
@@ -180,7 +180,7 @@ def create_tag():
         db.rollback()
         return jsonify(message='Tag failed'), 500
 
-    return jsonify(id=newTag.id)
+    return jsonify(name=newTag.name)
 
 @bp.route('/post-tags', methods=['POST'])
 @login_required

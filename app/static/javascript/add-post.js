@@ -1,6 +1,38 @@
 const tags = document.querySelector('#tags');
+const newTag = document.querySelector('#newTag');
 
-const selectTags = function(e) {
+async function addNewTag(e) {
+    if (e.code == 'Enter' || e.target.value) {
+
+        const tagName = e.target.value.toLowerCase();
+
+        const response = await fetch('/api/tags', {
+            method: 'POST',
+            body: JSON.stringify({
+                tagName
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            console.log(response);
+            const newTagButton = document.createElement('button');
+            newTagButton.classList.add('btn', 'btn-solid')
+            newTagButton.setAttribute('type', 'button');
+            newTagButton.innerText = tagName;
+            tags.prepend(newTagButton);
+
+            newTag.value = '';
+        }
+        else {
+            alert(response.statusText);
+        };
+    }
+}
+
+const selectTags = function (e) {
     if (e.target.classList.contains('btn')) {
 
         if (e.target.classList.contains('btn-line')) {
@@ -14,7 +46,7 @@ const selectTags = function(e) {
     };
 };
 
-async function addPost (event) {
+async function addPost(event) {
     event.preventDefault();
 
     const title = document.querySelector('#post-title').value;
@@ -25,19 +57,19 @@ async function addPost (event) {
     const selectedTags = tags.querySelectorAll('.btn-solid');
     console.log(selectedTags);
 
-    for (let i=0; i<selectedTags.length; i++) {
+    for (let i = 0; i < selectedTags.length; i++) {
         let tagName = selectedTags[i].innerText.toLowerCase();
         console.log(tagName);
         tagged.push(tagName);
     }
 
     console.log(tagged);
-    
-    const response = await fetch ('/api/posts', {
+
+    const response = await fetch('/api/posts', {
         method: 'POST',
         body: JSON.stringify({
             title,
-            body, 
+            body,
             tagged
         }),
         headers: {
@@ -57,3 +89,5 @@ async function addPost (event) {
 document.querySelector('.new-post-form').addEventListener('submit', addPost);
 
 tags.addEventListener('click', selectTags);
+newTag.addEventListener('blur', addNewTag);
+

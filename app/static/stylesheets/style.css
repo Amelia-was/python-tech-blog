@@ -80,7 +80,7 @@ button:hover {
   cursor: pointer;
 }
 
-.btn {
+.btn, .input-btn-style {
   background: #694a68;
   padding: 10px;
   margin: 10px;
@@ -102,19 +102,13 @@ button:hover {
   background: #80597e;
 }
 
-.btn-line {
+.btn-line, .input-btn-style {
   background: #f2f2f2;
   color: #694a68;
   border: 1px solid #694a68;
 }
 
-.btn-line:active {
-  background: #694a68;
-  color: #f2f2f2;
-  border: 1px solid #694a68;
-}
-
-.btn-line:hover {
+.btn-line:hover, .input-btn-style:hover {
   background: #694a68;
   color: #f2f2f2;
 }
@@ -122,6 +116,16 @@ button:hover {
 .btn-list {
   display: flex;
   flex-flow: row wrap;
+}
+
+.input-btn-style {
+  max-width: max-content;
+}
+
+.input-btn-style:hover {
+  background: #f2f2f2;
+  color: #694a68;
+  border: 1px solid #694a68;
 }
 
 .edit-link, .edit-link:visited {
@@ -478,6 +482,10 @@ body {
 
 .box-shadow {
   box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.1);
+}
+
+.d-none {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

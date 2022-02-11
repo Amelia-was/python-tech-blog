@@ -84,12 +84,6 @@ button:hover {
     border: 1px solid $accent;
 }
 
-.btn-line:active {
-    background: $accent;
-    color: $bg;
-    border: 1px solid $accent;
-}
-
 .btn-line:hover {
     background: $accent;
     color: $bg;
@@ -98,6 +92,18 @@ button:hover {
 .btn-list {
     display: flex;
     flex-flow: row wrap;
+}
+
+.input-btn-style {
+    @extend .btn;
+    @extend .btn-line;
+    max-width: max-content;
+}
+
+.input-btn-style:hover {
+    background: $bg;
+    color: $accent;
+    border: 1px solid $accent;
 }
 
 .edit-link, .edit-link:visited {
