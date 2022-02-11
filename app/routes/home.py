@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, session, redirect
-from app.models import User, Post, Tag
+from app.models import User, Post, Tag, PostTag
 from app.db import get_db
 
 bp = Blueprint('home', __name__, url_prefix='/')
@@ -22,11 +22,15 @@ def index():
 def tagged(tag):
     # get all posts tagged <tag>
     db = get_db()
-    posts = db.query(Tag).filter(Tag.tag_name == tag).all()
+
+    tags = db.query(Tag).all()
+    post_ids = db.query(PostTag.post_id).filter(PostTag.tag_name == tag)
+    posts = db.query(Post).filter(Post.id.in_(post_ids)).all()
 
     return render_template(
         'homepage.html',
         posts=posts,
+        tags=tags,
         loggedIn=session.get('loggedIn')
     )
 
